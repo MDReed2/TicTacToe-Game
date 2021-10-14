@@ -26,6 +26,11 @@ body {
         div {
           width: 185px;
           height: 185px;
+
+          @media (max-width: 768px) {
+            width: 100px;
+            height: 100px;
+          }
         }
       }
     }
@@ -41,6 +46,13 @@ header {
 main{
   display: grid;
   justify-content: center;
+  padding-bottom: 2rem;
+
+  section:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
 
   .card {
     background-color: transparent;
@@ -100,20 +112,39 @@ main{
   }
 
   .row {
-    div:nth-of-type(2), div:nth-of-type(8) {
+    div:nth-child(2), div:nth-child(8) {
       border-left: 2px solid #FFFFFF;
       border-right: 2px solid #FFFFFF;
     }
 
-    div:nth-of-type(5) {
+    div:nth-child(5) {
       border: 2px solid #FFFFFF;
     }
 
-    div:nth-of-type(4), div:nth-of-type(6) {
+    div:nth-child(4), div:nth-child(6) {
       border-top: 2px solid #FFFFFF;
       border-bottom: 2px solid #FFFFFF;
     }
+
+    div.box {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      font-size: 6.5rem;
+    }
   }
+
+  // #tic-tac-toe {
+  //   #TWO, #FIVE, #EIGHT {
+  //     border-left: 2px solid #FFFFFF;
+  //     border-right: 2px solid #FFFFFF;
+  //   }
+
+  //   #FOUR, #FIVE, #SIX {
+  //     border-top: 2px solid #FFFFFF;
+  //     border-bottom: 2px solid #FFFFFF;
+  //   }
+  // }
 
 }
 

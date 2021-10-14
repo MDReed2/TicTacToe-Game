@@ -43,6 +43,8 @@ const signInFailure = function (error) {
     'Sign in unsuccessful. Please ensure credentials are correct.'
   )
 
+  setTimeout(() => $('#error-message').text(''), 3000)
+
   $('#error-message').removeClass()
   $('#error-message').addClass('text-danger')
   console.error('Error is', error)
@@ -102,6 +104,19 @@ const BackToSignIn = function () {
   $('#pre-sign-up').show()
 }
 
+const startGameSuccess = function (responseData) {
+  $('#user-display').text('Game successfully started')
+  $('#user-display').removeClass()
+  $('#user-display').addClass('text-success')
+}
+
+const startGameFailure = function () {
+  $('#error-message').text('There was a error starting the game. Please try again')
+
+  $('#error-message').removeClass()
+  $('#error-message').addClass('text-danger')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -112,5 +127,7 @@ module.exports = {
   signOutSuccess,
   signOutError,
   preSignUp,
-  BackToSignIn
+  BackToSignIn,
+  startGameSuccess,
+  startGameFailure
 }

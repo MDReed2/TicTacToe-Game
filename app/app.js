@@ -17,5 +17,5 @@ $(() => {
   $('#back-to-sign-in').on('click', authEvents.onBackToSignIn)
 
   // When player clicks on box
-  $('#tic-tac-toe').on('click', gameEvents.onBoxSelection)
+  $('#tic-tac-toe div').on('click', gameEvents.onBoxSelection)
 })

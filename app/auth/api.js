@@ -47,12 +47,12 @@ const signOut = function (formData) {
   })
 }
 
-const startGame = function (formData) {
+const startGame = function () {
   return $.ajax({
-    url: `${config.apiUrl}/sign-out`,
-    method: 'GET',
+    url: `${config.apiUrl}/games`,
+    method: 'POST',
     headers: {
-      Authorization: 'Bearer ' + store.user.token
+      Authorization: `Bearer ${store.user.token}`
     }
   })
 }

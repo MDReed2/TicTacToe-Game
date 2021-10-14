@@ -16,6 +16,7 @@ const onBoxSelection = function (event) {
     .selectBox(boxSelection)
 }
 
+
 module.exports = {
   onBoxSelection
 }
