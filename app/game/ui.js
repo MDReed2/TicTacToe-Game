@@ -50,6 +50,8 @@ const selectBox = function (event) {
   console.log(spaces)
 }
 
+
+
 const winningPlayer = function () {
   // for (let i = 0; i < winningOptions.length; i++) {
   //   if (winningOptions[0][i] === ) {}
@@ -57,7 +59,35 @@ const winningPlayer = function () {
 
   if (spaces[0][0].innerText === currentPlayer) {
     if (spaces[1][0].innerText === currentPlayer && spaces[2][0].innerText === currentPlayer) {
-      console.log(currentPlayer + " is the winner");
+      console.log(currentPlayer + " is the winner")
+    }
+  } else if (spaces[3][0].innerText === currentPlay) {
+    if (spaces[4][0].innerText === currentPlayer && spaces[5][0].innerText === currentPlayer) {
+      console.log(currentPlayer + " is the winner")
+    }
+  } else if (spaces[6][0].innerText === currentPlay) {
+    if (spaces[7][0].innerText === currentPlayer && spaces[8][0].innerText === currentPlayer) {
+      console.log(currentPlayer + " is the winner")
+    }
+  } else if (spaces[0][0].innerText === currentPlay) {
+    if (spaces[3][0].innerText === currentPlayer && spaces[6][0].innerText === currentPlayer) {
+      console.log(currentPlayer + " is the winner")
+    }
+  } else if (spaces[1][0].innerText === currentPlay) {
+    if (spaces[4][0].innerText === currentPlayer && spaces[7][0].innerText === currentPlayer) {
+      console.log(currentPlayer + " is the winner")
+    }
+  } else if (spaces[2][0].innerText === currentPlay) {
+    if (spaces[5][0].innerText === currentPlayer && spaces[8][0].innerText === currentPlayer) {
+      console.log(currentPlayer + " is the winner")
+    }
+  } else if (spaces[0][0].innerText === currentPlay) {
+    if (spaces[4][0].innerText === currentPlayer && spaces[8][0].innerText === currentPlayer) {
+      console.log(currentPlayer + " is the winner")
+    }
+  } else if (spaces[2][0].innerText === currentPlay) {
+    if (spaces[4][0].innerText === currentPlayer && spaces[6][0].innerText === currentPlayer) {
+      console.log(currentPlayer + " is the winner")
     }
   }
 }
