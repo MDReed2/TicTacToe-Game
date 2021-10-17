@@ -1,3 +1,5 @@
+// const { compile } = require("handlebars")
+
 const player1 = "X"
 const player2 = "O"
 let currentPlayer = ""
@@ -27,6 +29,8 @@ const winningOptions = [
 const selectBox = function (event) {
   const id = event.target.id
 
+
+
   if (!spaces[id]) {
     if (count % 2 === 0) {
       currentPlayer = $("#" + id).text(player1)
@@ -36,44 +40,81 @@ const selectBox = function (event) {
     else {
       currentPlayer = $("#" + id).text(player2)
       $("#" + id).off('click')
-      spaces[id] = currentPlayer;
+      spaces[id] = currentPlayer
     }
     count++
   }
 
-  if (winningPlayer()) {
-    $("#user-display").text(`${currentPlayer} is the WINNER`)
+  // isBoardFull()
 
-    return
-  }
+  winningPlayer()
 
   console.log(spaces)
+
+  return currentPlayer
 }
 
 
-
 const winningPlayer = function () {
+  const results = $('#results')
 
   for (let idx = 0; idx < 8; idx++) {
     if (
-      spaces[winningOptions[idx][0]].innerText ===
-        spaces[winningOptions[idx][1]].innerText &&
-      spaces[winningOptions[idx][1]].innerText ===
-        spaces[winningOptions[idx][2]].innerText &&
-      spaces[winningOptions[idx][2]].innerText ===
-        spaces[winningOptions[idx][0]].innerText &&
+      spaces[winningOptions[idx][0]].innerHTML ===
+        spaces[winningOptions[idx][1]].innerHTML &&
+      spaces[winningOptions[idx][1]].innerHTML ===
+        spaces[winningOptions[idx][2]].innerHTML &&
+      spaces[winningOptions[idx][2]].innerHTML ===
+        spaces[winningOptions[idx][0]].innerHTML &&
       spaces[winningOptions[idx][0]] != ""
     ) {
-      return $("#user-display").text = `${
-        spaces[winningOptions[idx][0]].innerText
-      } is the winner`
+      console.log(spaces[winningOptions[idx][0]].innerHTML);
+
+      return ($("#results").text = `${
+        spaces[winningOptions[idx][0]].innerHTML
+      } is the winner`);
     }
   }
   return
 }
 
+const startGameSuccess = function (responseData) {
+  $("#user-display").text("Game successfully started")
+  $("#user-display").removeClass()
+  $("#user-display").addClass("text-white")
+
+  $("#tic-tac-toe div").on("click", selectBox)
+
+
+  setTimeout(() => $("#user-display").text(""), 3000)
+}
+
+const startGameFailure = function () {
+  $("#error-message").text(
+    "There was a error starting the game. Please try again"
+  )
+
+  $("#error-message").removeClass()
+  $("#error-message").addClass("text-light")
+
+  setTimeout(() => $("#error-message").text(""), 3000);
+}
+
+
+const resetGame = () => {
+  $('.box').text('')
+
+  // for (let i=0; i < spaces.length; i++) {
+  //   spaces[i] = ""
+  // }
+  // count = 0
+}
+
 
 module.exports = {
+  startGameSuccess,
+  startGameFailure,
   selectBox,
-  winningPlayer
+  winningPlayer,
+  resetGame
 }

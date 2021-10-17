@@ -2,12 +2,21 @@
 // Require the store object. We will use it to share data between different files.
 const store = require('../store')
 
+// $( document ).ready(function() {
+//     console.log( "ready!" );
+//     $("#tic-tac-toe div").off("click")
+// })
+
+$( window ).on( "load", function() { $("#tic-tac-toe div").attr("disabled", "disabled") })
+
 const signUpSuccess = function (responseData) {
   $('#user-display').text('Sign up successful')
 
   $('#user-display').removeClass()
   $('#user-display').addClass('text-success')
   $('form').trigger('reset')
+
+  setTimeout(() => $("#user-display").text(""), 3000);
 
   console.log('Response data is ', responseData)
 }
@@ -79,6 +88,10 @@ const signOutSuccess = function (responseData) {
 
   $('#before-sign-in').show()
 
+  $('.box').text("")
+
+  setTimeout(() => $("#user-display").text(""), 3000)
+
   console.log('responseData is ', responseData)
 }
 
@@ -104,19 +117,6 @@ const BackToSignIn = function () {
   $('#pre-sign-up').show()
 }
 
-const startGameSuccess = function (responseData) {
-  $('#user-display').text('Game successfully started')
-  $('#user-display').removeClass()
-  $('#user-display').addClass('text-success')
-}
-
-const startGameFailure = function () {
-  $('#error-message').text('There was a error starting the game. Please try again')
-
-  $('#error-message').removeClass()
-  $('#error-message').addClass('text-danger')
-}
-
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -127,7 +127,5 @@ module.exports = {
   signOutSuccess,
   signOutError,
   preSignUp,
-  BackToSignIn,
-  startGameSuccess,
-  startGameFailure
+  BackToSignIn
 }

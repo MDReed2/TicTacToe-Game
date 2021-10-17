@@ -63,8 +63,6 @@ main{
       display: none;
     }
 
-    // &.sign-in-card {}
-
     form {
       &.border {
         border: none !important;
@@ -133,21 +131,13 @@ main{
       font-size: 6.5rem;
     }
   }
-
-  // #tic-tac-toe {
-  //   #TWO, #FIVE, #EIGHT {
-  //     border-left: 2px solid #FFFFFF;
-  //     border-right: 2px solid #FFFFFF;
-  //   }
-
-  //   #FOUR, #FIVE, #SIX {
-  //     border-top: 2px solid #FFFFFF;
-  //     border-bottom: 2px solid #FFFFFF;
-  //   }
-  // }
-
 }
 
 #after-sign-in {
   display: none;
+}
+
+.greyed-out {
+  background-color: #000000;
+  opacity: .40;
 }
