@@ -52,11 +52,11 @@ const signInFailure = function (error) {
     'Sign in unsuccessful. Please ensure credentials are correct.'
   )
 
-  setTimeout(() => $('#error-message').text(''), 3000)
-
   $('#error-message').removeClass()
   $('#error-message').addClass('text-danger')
   console.error('Error is', error)
+
+  setTimeout(() => $("#error-message").text(""), 3000)
 }
 
 const changePasswordSuccess = function (responseData) {

@@ -75,7 +75,6 @@ const winningPlayer = function () {
       } is the winner`);
     }
   }
-  return
 }
 
 const startGameSuccess = function (responseData) {
@@ -104,10 +103,10 @@ const startGameFailure = function () {
 const resetGame = () => {
   $('.box').text('')
 
-  // for (let i=0; i < spaces.length; i++) {
-  //   spaces[i] = ""
-  // }
-  // count = 0
+  for (let i=0; i < spaces.length; i++) {
+    spaces[i] = ""
+  }
+  count = 0
 }
 
 
