@@ -43,7 +43,7 @@ const selectBox = function (event) {
   console.log(spaces)
 
   return currentPlayer
-};
+}
 const winningPlayer = function (event) {
   for (let idx = 0; idx < 8; idx++) {
     if (
@@ -62,6 +62,9 @@ const winningPlayer = function (event) {
         .addClass("gradient-text")
 
       $("#tic-tac-toe div").off("click", selectBox)
+    } else if (count === 9) {
+      $("#results")
+        .text('Tie Game')
     }
   }
 }
