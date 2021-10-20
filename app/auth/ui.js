@@ -13,7 +13,7 @@ const signUpSuccess = function (responseData) {
   $('#user-display').text('Sign up successful')
 
   $('#user-display').removeClass()
-  $('#user-display').addClass('text-success')
+  $('#user-display').addClass('text-white')
   $('form').trigger('reset')
 
   setTimeout(() => $("#user-display").text(""), 3000);
@@ -25,7 +25,7 @@ const signUpFailure = function (error) {
   $('#error-message').text('Sign up failed')
 
   $('#error-message').removeClass()
-  $('#error-message').addClass('text-danger')
+  $('#error-message').addClass('text-info')
   console.error('Error is', error)
 }
 
@@ -39,7 +39,7 @@ const signInSuccess = function (responseData) {
   setTimeout(() => $('#user-display').text(''), 3000)
 
   $('#user-display').removeClass()
-  $('#user-display').addClass('text-success')
+  $('#user-display').addClass('text-white')
   $('form').trigger('reset')
   // Before signing in hide the section with the id `before-sign-in`
   $('#before-sign-in').hide()
@@ -53,7 +53,7 @@ const signInFailure = function (error) {
   )
 
   $('#error-message').removeClass()
-  $('#error-message').addClass('text-danger')
+  $('#error-message').addClass('text-info')
   console.error('Error is', error)
 
   setTimeout(() => $("#error-message").text(""), 3000)
@@ -79,9 +79,10 @@ const changePasswordFailure = function (error) {
 
 const signOutSuccess = function (responseData) {
   $('#user-display').text('You have been successfully signed out')
+  $('#results').text('')
 
   $('#user-display').removeClass()
-  $('#user-display').addClass('text-success')
+  $('#user-display').addClass('text-light')
   $('form').trigger('reset')
 
   $('#after-sign-in').hide()
@@ -99,7 +100,7 @@ const signOutError = function (error) {
   $('#error-message').text('There was a error signing you out')
 
   $('#error-message').removeClass()
-  $('#error-message').addClass('text-danger')
+  $('#error-message').addClass('text-info')
   console.error('Error is', error)
 }
 

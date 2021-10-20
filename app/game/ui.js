@@ -65,6 +65,7 @@ const winningPlayer = function (event) {
     } else if (count === 9) {
       $("#results")
         .text('Tie Game')
+        .removeClass('gradient-text')
     }
   }
 }
