@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic Tac Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <header>
+        <h1>TIC TAC TOE</h1>
+      </header>
+      <main>
+        <section>
+          <div id="error-message">
+
+          </div>
+          <div id="user-display">
+
+          </div>
+        </section>
+        <section id="before-sign-in">
+          <!-- Sign-up form goes here -->
+          <div class="card sign-up-card">
+            <form id="sign-up" class="card-body">
+              <h3>Sign Up</h3>
+
+              <div>
+                <label for="sign-up-email">Email:</label>
+                <input type="email" id="sign-up-email" name="credentials[email]" required>
+              </div>
+              <div>
+                <label for="sign-up-password">Password:</label>
+                <input type="password" id="sign-up-password" name="credentials[password]" required>
+              </div>
+              <div>
+                <label for="password_confirmation">Password Confirmation:</label>
+                <input type="password" id="password_confirmation" name="credentials[password_confirmation]" required>
+              </div>
+
+              <button class="btn btn-dark">Sign Up</button>
+            </form>
+          </div>
+
+
+          <!-- Sign in -->
+          <div class="card sign-in-card">
+            <form id="sign-in" class="card-body">
+              <h3>Sign In</h3>
+              <div>
+                <label for="sign-in-email">Email:</label>
+                <input type="email" id="sign-in-email" name="credentials[email]" required>
+              </div>
+              <div>
+                <label for="sign-in-password">Password:</label>
+                <input type="password" id="sign-in-password" name="credentials[password]" required>
+              </div>
+
+              <button class="btn btn-dark">Sign-in</button>
+            </form>
+          </div>
+
+          <p id="pre-sign-up">Need an account? <button class="btn btn-outline-light btn-sm">Sign Up</button></p>
+          <p id="back-to-sign-in"><button class="btn btn-outline-light btn-sm">Back to Sign In</button></p>
+        </section>
+        <section id="after-sign-in">
+          <div class="nav">
+            <button id="start-game" class="btn btn-light">Start Game</button>
+            <button id="reset-game" class="btn btn-light">Reset Game</button>
+            <button id="sign-out" class="btn btn-light">Sign Out</button>
+          </div>
+          <div class="main">
+            <div class="container">
+              <h2 id="results"></h2>
+              <div id="tic-tac-toe" class="row">
+                <div class="col-4 box" id="0" name="game[cells]"></div>
+                <div class="col-4 box" id="1" name="game[cells]"></div>
+                <div class="col-4 box" id="2" name="game[cells]"></div>
+                <div class="col-4 box" id="3" name="game[cells]"></div>
+                <div class="col-4 box" id="4" name="game[cells]"></div>
+                <div class="col-4 box" id="5" name="game[cells]"></div>
+                <div class="col-4 box" id="6" name="game[cells]"></div>
+                <div class="col-4 box" id="7" name="game[cells]"></div>
+                <div class="col-4 box" id="8" name="game[cells]"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+    </body>
+</html>
