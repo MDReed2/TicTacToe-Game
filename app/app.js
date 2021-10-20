@@ -20,8 +20,7 @@ $(() => {
 
 
   // When player clicks Start Game
-  $("#start-game").on("click", gameEvents.onStartGame);
-  // $('#tic-tac-toe div').on('click', gameEvents.onBoxSelection)
+  $("#start-game").on("click", gameEvents.onStartGame)
   $("#reset-game").on("click", gameEvents.onResetGame)
 })
 

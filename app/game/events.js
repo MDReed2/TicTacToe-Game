@@ -17,15 +17,6 @@ const onStartGame = function (event) {
     .catch(ui.startGameFailure)
 }
 
-// const onBoxSelection = function (event) {
-//   event.preventDefault()
-
-//   const boxSelection = event
-
-//   ui
-//     .selectBox(boxSelection)
-// }
-
 const onResetGame = function (event) {
   event.preventDefault()
 
@@ -37,6 +28,5 @@ const onResetGame = function (event) {
 
 module.exports = {
   onStartGame,
-  // onBoxSelection,
   onResetGame
 };
