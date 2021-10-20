@@ -26,6 +26,9 @@ const signUpFailure = function (error) {
 
   $('#error-message').removeClass()
   $('#error-message').addClass('text-info')
+  $("form").trigger("reset")
+
+  setTimeout(() => $("#error-message").text(""), 3000)
   console.error('Error is', error)
 }
 
@@ -51,6 +54,8 @@ const signInFailure = function (error) {
   $('#error-message').text(
     'Sign in unsuccessful. Please ensure credentials are correct.'
   )
+
+  setTimeout(() => $("#error-message").text(""), 3000)
 
   $('#error-message').removeClass()
   $('#error-message').addClass('text-info')
